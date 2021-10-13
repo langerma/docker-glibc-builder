@@ -22,3 +22,8 @@ jobs:
         with:
           name: glibc-bin-2.34-aarch64.tar.gz
           path: glibc-bin-2.34-aarch64.tar.gz
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: glibc-bin-2.34-aarch64.tar.gz
