@@ -1,7 +1,7 @@
-name: build our image
+name: build and push glibc-builder
 
 on:
-  push:
+  pull:
     branches: main
 
 jobs:
@@ -22,8 +22,3 @@ jobs:
           docker buildx build --push \
             --tag langerma/glibc-builder:latest \
             --platform linux/amd64,linux/arm64 .
-  compile:
-    runs-on: self-hosted
-    steps:
-      - name: test
-        run: uname -a
