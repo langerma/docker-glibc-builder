@@ -1,3 +1,5 @@
+[![build our image](https://github.com/langerma/docker-glibc-builder/actions/workflows/image.yml/badge.svg)](https://github.com/langerma/docker-glibc-builder/actions/workflows/image.yml)
+
 # docker-glibc-builder
 
 A glibc binary package builder in Docker. Produces a glibc binary package that can be imported into a rootfs to run applications dynamically linked against glibc.
