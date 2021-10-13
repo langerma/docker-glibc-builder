@@ -16,5 +16,9 @@ jobs:
   compile:
     runs-on: self-hosted
     steps:
-      - name: test
-        run: docker run --rm --env STDOUT=1 langerma/glibc-builder 2.34 /usr/glibc-compat > glibc-bin.tar.gz
+      - name: build glibc for aarch64
+        run: docker run --rm --env STDOUT=1 langerma/glibc-builder 2.34 /usr/glibc-compat > glibc-bin-2.34-aarch64.tar.gz
+      - uses: actions/upload-artifact@v2
+        with:
+          name: glibc-bin-2.34-aarch64.tar.gz
+          path: glibc-bin-2.34-aarch64.tar.gz
