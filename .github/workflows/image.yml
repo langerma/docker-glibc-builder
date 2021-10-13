@@ -1,7 +1,7 @@
 name: build and push glibc-builder
 
 on:
-  pull:
+  pull_request:
     branches: main
 
 jobs:
